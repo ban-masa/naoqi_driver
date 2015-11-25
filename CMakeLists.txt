@@ -39,6 +39,7 @@ set(
   src/subscribers/teleop.cpp
   src/subscribers/moveto.cpp
   src/subscribers/speech.cpp
+  src/subscribers/set_life_status.cpp
   )
 
 set(

@@ -61,6 +61,7 @@
 #include "subscribers/teleop.hpp"
 #include "subscribers/moveto.hpp"
 #include "subscribers/speech.hpp"
+#include "subscribers/set_life_status.hpp"
 
 
 /*
@@ -789,6 +790,7 @@ void Driver::registerDefaultSubscriber()
   registerSubscriber( boost::make_shared<naoqi::subscriber::TeleopSubscriber>("teleop", "/cmd_vel", "/joint_angles", sessionPtr_) );
   registerSubscriber( boost::make_shared<naoqi::subscriber::MovetoSubscriber>("moveto", "/move_base_simple/goal", sessionPtr_, tf2_buffer_) );
   registerSubscriber( boost::make_shared<naoqi::subscriber::SpeechSubscriber>("speech", "/speech", sessionPtr_) );
+  registerSubscriber( boost::make_shared<naoqi::subscriber::LifeStatusSubscriber>("set_life_status", "/set_life_status", sessionPtr_) );
 }
 
 void Driver::registerService( service::Service srv )
